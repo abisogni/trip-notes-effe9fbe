@@ -22,7 +22,7 @@ function gWalk(km) {
 
 function gPinHtml(p, num, anchor) {
   const km = gDistKm(anchor, p.lat, p.lng);
-  const q = encodeURIComponent(p.name.split(" (")[0] + " Copenhagen").replace(/%20/g, "+");
+  const q = encodeURIComponent(p.name.split(" (")[0] + " " + TRIP.geocodeSuffix).replace(/%20/g, "+");
   const notes = (p.notes || []).map((n) => `<div class="pin-note"><strong>${gEsc(n.label)}</strong>${gEsc(n.text)}</div>`).join("");
   const egg = p.easter_egg ? `<div class="egg"><strong>Easter egg</strong>${gEsc(p.easter_egg)}</div>` : "";
   const tags = (p.tags || []).map((t) => `<span class="tag t-${gEsc(t.color)}">${gEsc(t.text)}</span>`).join("");
