@@ -157,7 +157,7 @@ async function uploadPhoto(blob) {
   const { cloudName, uploadPreset, folder } = TRIP.cloudinary;
   if (!cloudName || !uploadPreset) throw new Error("Cloudinary isn't configured in config.js");
   const fd = new FormData();
-  fd.append("file", blob);
+  fd.append("file", blob, "photo.jpg");
   fd.append("upload_preset", uploadPreset);
   if (folder) fd.append("folder", folder);
   const res = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`, { method: "POST", body: fd });
@@ -222,6 +222,7 @@ async function loadComments(pinId, journalEl) {
   const { data, error } = await supabaseClient
     .from(TRIP.commentsTable)
     .select("*")
+    .eq("trip_id", TRIP.id)
     .eq("pin_id", String(pinId))
     .order("created_at", { ascending: true });
 
@@ -287,6 +288,7 @@ async function postComment(pinId, pinName, journalEl, form) {
     }
 
     const { error: insErr } = await supabaseClient.from(TRIP.commentsTable).insert({
+      trip_id: TRIP.id,
       pin_id: String(pinId),
       pin_name: pinName,
       author,
@@ -403,6 +405,7 @@ async function loadExistingNewPins() {
   const { data, error } = await supabaseClient
     .from(TRIP.pinsTable)
     .select("*")
+    .eq("trip_id", TRIP.id)
     .order("created_at", { ascending: true });
   if (error || !data) return;
   data.forEach(addNewPinToPage);
@@ -528,6 +531,7 @@ function initAddPlace() {
       const { data, error } = await supabaseClient
         .from(TRIP.pinsTable)
         .insert({
+          trip_id: TRIP.id,
           name,
           lat: coords.lat,
           lng: coords.lng,
@@ -564,10 +568,10 @@ function setupRealtime() {
 
   supabaseClient
     .channel(TRIP.realtimeChannel)
-    .on("postgres_changes", { event: "INSERT", schema: "public", table: TRIP.pinsTable }, (payload) => {
+    .on("postgres_changes", { event: "INSERT", schema: "public", table: TRIP.pinsTable, filter: `trip_id=eq.${TRIP.id}` }, (payload) => {
       addNewPinToPage(payload.new);
     })
-    .on("postgres_changes", { event: "INSERT", schema: "public", table: TRIP.commentsTable }, (payload) => {
+    .on("postgres_changes", { event: "INSERT", schema: "public", table: TRIP.commentsTable, filter: `trip_id=eq.${TRIP.id}` }, (payload) => {
       const pinEl = document.getElementById("pin-" + payload.new.pin_id);
       if (!pinEl) return;
       const journal = pinEl.querySelector(".journal");

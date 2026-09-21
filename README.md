@@ -8,10 +8,11 @@ entries and photos, and a way to add new places while out and about.
 - Static site: `index.html` + `app.js` + `config.js` + `skyline.svg`, on GitHub Pages.
 - **All trip-specific settings are in `config.js`** (`TRIP`): table names, hotel,
   geocoding area, Cloudinary. `app.js` is generic.
-- Supabase (shared `paris-trip-2026` project): `copenhagen_pins`,
-  `copenhagen_comments` (see `supabase-setup.sql`). Append-only via RLS.
-- Photos: uploaded from the browser to Cloudinary with an unsigned preset
-  (`TRIP.cloudinary.cloudName` / `uploadPreset`).
+- Trip id: `2026-10-copenhagen` (YYYY-MM of trip start + slug). Used for every DB row and the Cloudinary folder.
+- Supabase (shared `paris-trip-2026` project): shared `trip_pins` / `trip_comments`
+  tables scoped by `trip_id`. Append-only via RLS.
+- Photos: uploaded from the browser to Cloudinary (account alex@alexbisogni.com,
+  cloud `ffi8egjg`, unsigned preset `trip-photos`) into `trips/2026-10-copenhagen/`.
 
 ## Guide content
 
