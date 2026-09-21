@@ -12,8 +12,8 @@ const TRIP = {
   commentsTable: "copenhagen_comments",
   realtimeChannel: "copenhagen-live",
 
-  // Home base (placeholder: Rådhuspladsen — replace once the hotel is booked/known).
-  hotel: { lat: 55.6761, lng: 12.5683, name: "Hotel (TBD)" },
+  // Map anchor = Kongens Nytorv (the guide's reference point). Swap for the real hotel once known.
+  hotel: { lat: 55.6806, lng: 12.5859, name: "Kongens Nytorv (anchor — hotel TBD)" },
 
   // Nominatim viewbox "left,top,right,bottom" (lon/lat) around central Copenhagen,
   // and the suffix appended to typed place names when geocoding.

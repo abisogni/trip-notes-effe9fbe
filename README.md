@@ -13,15 +13,13 @@ entries and photos, and a way to add new places while out and about.
 - Photos: uploaded from the browser to Cloudinary with an unsigned preset
   (`TRIP.cloudinary.cloudName` / `uploadPreset`).
 
-## Test data -> real guide
+## Guide content
 
-The 20 `.pin` blocks, section headings, food/practical boxes and reference
-table in `index.html` are the **Paris guide, used as test data**. To flush:
-delete those blocks (and the `.test-banner` div), paste in the Copenhagen
-guide in the same `.pin` markup (`data-pin-id`, `data-pin-name`, `data-lat`,
-`data-lng`), set the real hotel in `config.js`, and bump the version footer.
-Existing journal comments keyed to pin ids "1".."20" should be deleted from
-`copenhagen_comments` at the same time.
+The 23 pins, quick-reference notes, October conditions and reference table in
+`index.html` are the real Copenhagen guide (from the Claude artifact
+`claude.ai/artifact/JBNzcPHthXfpLqKgbMiJbS`), anchored at Kongens Nytorv.
+Pin markup: `.pin` with `data-pin-id`, `data-pin-name`, `data-lat`, `data-lng`.
+Set the real hotel in `config.js` once known (map marker + "reference point").
 
 ## Notes
 
