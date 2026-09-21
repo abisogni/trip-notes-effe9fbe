@@ -593,6 +593,15 @@ document.addEventListener("DOMContentLoaded", async () => {
   ensureIdentity();
   initAddPlace();
 
+  // Guide pins come from guide.json; everything below works off the rendered DOM.
+  try {
+    await loadGuide();
+  } catch (err) {
+    console.error(err);
+    document.getElementById("guide-pins").innerHTML =
+      '<div class="journal-empty" style="padding:24px 0;">Couldn\'t load the guide — check your connection and reload.</div>';
+  }
+
   document.querySelectorAll(".pin[data-pin-id]").forEach((pinEl) => {
     buildJournalUI(pinEl, pinEl.dataset.pinId, pinEl.dataset.pinName);
   });

@@ -14,13 +14,21 @@ entries and photos, and a way to add new places while out and about.
 - Photos: uploaded from the browser to Cloudinary (account alex@alexbisogni.com,
   cloud `ffi8egjg`, unsigned preset `trip-photos`) into `trips/2026-10-copenhagen/`.
 
-## Guide content
+## Guide content (`guide.json`)
 
-The 23 pins, quick-reference notes, October conditions and reference table in
-`index.html` are the real Copenhagen guide (from the Claude artifact
-`claude.ai/artifact/JBNzcPHthXfpLqKgbMiJbS`), anchored at Kongens Nytorv.
-Pin markup: `.pin` with `data-pin-id`, `data-pin-name`, `data-lat`, `data-lng`.
-Set the real hotel in `config.js` once known (map marker + "reference point").
+The fixed guide lives in `guide.json` and is rendered by `guide.js`: trip
+title/hero text, sections, pins (each with a permanent `id`), the notes and
+conditions boxes, and the reference table (built automatically from the pins,
+with distances computed from `trip.anchor`). Change the trip by editing that
+file only; `index.html` is a shell.
+
+- **Pin `id`s are permanent.** Journal entries are stored against the pin id
+  (per `trip_id`), so never rename or reuse an id once the trip is under way.
+  Reordering or adding pins is safe.
+- Places added during the trip are NOT in `guide.json`; they live in the
+  `trip_pins` table and are drawn under "added by you". Notes and photos on any
+  pin live in `trip_comments` / Cloudinary.
+- `*word*` in a section title renders as italics.
 
 ## Notes
 

@@ -1,0 +1,743 @@
+{
+  "trip": {
+    "id": "2026-10-copenhagen",
+    "page_title": "Copenhagen Discovery Guide — October 2026",
+    "eyebrow": "Discovery Guide — Copenhagen — October 2026",
+    "heading": [
+      "Copenhagen",
+      "for Alex & Jamila"
+    ],
+    "subtitle": "Twenty-three pins for a first visit: fourteen confirmed, three for Jamila, and six more within a short walk of Kongens Nytorv. Storybook streets, Andersen's Copenhagen, bakeries, a candlelit jazz cellar, and one very good pool.",
+    "hero_meta": [
+      {
+        "label": "Hotel — to be added",
+        "text": "Address TBD"
+      },
+      {
+        "label": "Reference point",
+        "text": "Kongens Nytorv, 55.6806°N, 12.5859°E"
+      },
+      {
+        "label": "October 17–24, 2026",
+        "text": "Saturday to Saturday"
+      },
+      {
+        "label": "Getting around",
+        "text": "Metro, bikes, and feet"
+      }
+    ],
+    "anchor": {
+      "name": "Kongens Nytorv",
+      "lat": 55.6806,
+      "lng": 12.5859
+    },
+    "ref_bar": [
+      {
+        "label": "Anchor",
+        "text": "Kongens Nytorv, 55.6806°N 12.5859°E"
+      },
+      {
+        "label": "Walking",
+        "text": "most of Indre By is under 1.5 km from the anchor"
+      },
+      {
+        "text": "Distances are as-the-crow-flies. Farther pins (Reffen, Islands Brygge, Nørrebro) are a bike or metro ride."
+      }
+    ],
+    "live_label": "Live — built together, October 17–24",
+    "added_label": "Section IV — added by you",
+    "skyline_alt": "Illustrated Copenhagen skyline: Nyhavn façades, Church of Our Saviour, Børsen, the Round Tower",
+    "table_footnote": "Distances are straight-line from Kongens Nytorv. Coordinates come from address lookups and are good to a few tens of metres."
+  },
+  "sections": [
+    {
+      "label": "Section I — confirmed pins",
+      "title": "The *first fourteen*",
+      "pins": [
+        {
+          "id": "rosenborg-castle",
+          "name": "Rosenborg Castle",
+          "area": "Indre By · Øster Voldgade 4A",
+          "lat": 55.6856,
+          "lng": 12.5778,
+          "color": "rose",
+          "description": "A Dutch-Renaissance pleasure palace built by Christian IV (1606–24), now home to the Crown Jewels and Danish Crown Regalia. The surrounding King's Garden (Kongens Have) is the city's oldest royal garden.",
+          "easter_egg": "The Knights' Hall features three life-size silver lions guarding coronation thrones inlaid with narwhal tusk — long sold across Europe as genuine unicorn horn. The castle also had a 17th-century \"invisible music\" system: court musicians played in a hidden cellar and sound drifted up through acoustic ducts into the room above.",
+          "tags": [
+            {
+              "color": "rose",
+              "text": "royal"
+            },
+            {
+              "color": "sage",
+              "text": "King's Garden"
+            },
+            {
+              "color": "ink",
+              "text": "Indre By"
+            }
+          ]
+        },
+        {
+          "id": "the-round-tower",
+          "name": "The Round Tower (Rundetårn)",
+          "area": "Indre By · Købmagergade 52A",
+          "lat": 55.6813,
+          "lng": 12.5757,
+          "color": "rose",
+          "description": "Built 1637–42 by Christian IV; Europe's oldest functioning observatory building. A 7.5-turn cobbled equestrian spiral ramp (no stairs, so a gentle climb) leads to a rooftop viewing platform. Halfway up, the Library Hall is a genuinely atmospheric former university book hall now used for concerts and exhibitions.",
+          "easter_egg": "A young H.C. Andersen made the Round Tower one of his first stops when he arrived in Copenhagen as a teenager. The spiral ramp was designed wide enough for horse-drawn carriages — Peter the Great of Russia reportedly rode it on horseback in 1716.",
+          "tags": [
+            {
+              "color": "rose",
+              "text": "Christian IV"
+            },
+            {
+              "color": "lavender",
+              "text": "H.C. Andersen"
+            },
+            {
+              "color": "ink",
+              "text": "Indre By"
+            }
+          ]
+        },
+        {
+          "id": "torvehallerne-kbh",
+          "name": "Torvehallerne KBH",
+          "area": "Indre By / Nørreport edge · Frederiksborggade 21",
+          "lat": 55.6839,
+          "lng": 12.5696,
+          "color": "gold",
+          "description": "Two glass-and-steel market halls (opened September 2011) with 60+ stalls selling fresh produce, cheese, seafood, smørrebrød, coffee, and more. Right at Nørreport station. Open year-round (roughly Mon–Thu 10:00–19:00, Fri 10:00–20:00, Sat 10:00–18:00, Sun 10:00–17:00).",
+          "easter_egg": "The market revives a trading spot that served as Copenhagen's central wholesale produce market until 1958, on the site of the medieval Nørreport city gate.",
+          "tags": [
+            {
+              "color": "gold",
+              "text": "food market"
+            },
+            {
+              "color": "sage",
+              "text": "open year-round"
+            },
+            {
+              "color": "ink",
+              "text": "Nørreport"
+            }
+          ]
+        },
+        {
+          "id": "reffen-street-food-market",
+          "name": "Reffen Street Food Market",
+          "area": "Refshaleøen · Refshalevej 167A",
+          "lat": 55.6931,
+          "lng": 12.6097,
+          "color": "gold",
+          "description": "Northern Europe's largest street-food market, built from repurposed shipping containers on a former shipyard, about 2.5 km northeast of Nyhavn. For 2026, Reffen is extending its season into autumn with Culture Night, autumn-break family days, Halloween, and ice-skating.",
+          "easter_egg": "The site's industrial past shows throughout — an old B&W shipyard machine hall is now \"Werkstatt,\" its concert and event space. Reffen succeeded the earlier Papirøen (\"Paper Island\") Copenhagen Street Food market, which occupied the same harbor arc.",
+          "notes": [
+            {
+              "label": "Verify before going",
+              "text": "Autumn operation is event-based, not the full summer schedule. Check hours at reffen.dk before visiting."
+            }
+          ],
+          "tags": [
+            {
+              "color": "gold",
+              "text": "street food"
+            },
+            {
+              "color": "sage",
+              "text": "harbour"
+            },
+            {
+              "color": "ink",
+              "text": "Refshaleøen"
+            }
+          ]
+        },
+        {
+          "id": "tivoli-food-hall",
+          "name": "Tivoli Food Hall",
+          "area": "Vesterbro · Vesterbrogade 3",
+          "lat": 55.6746,
+          "lng": 12.5657,
+          "color": "gold",
+          "description": "An 850 m² food hall of ~15 stalls that opened in 2017 at the base of \"Tivoli Corner.\" Free street entry — no Gardens ticket required. Also has a separate internal entrance from inside Tivoli Gardens. Open year-round.",
+          "easter_egg": "One stall, Bobbabella, is a Bornholm-inspired fast-food concept from the team behind Michelin-starred Kadeau.",
+          "notes": [
+            {
+              "label": "Not the same as Tivoli Gardens",
+              "text": "The Food Hall has its own free street entrance on Vesterbrogade 3, plus an internal door from inside the Gardens."
+            }
+          ],
+          "tags": [
+            {
+              "color": "gold",
+              "text": "food hall"
+            },
+            {
+              "color": "sage",
+              "text": "free entry"
+            },
+            {
+              "color": "ink",
+              "text": "Vesterbro"
+            }
+          ]
+        },
+        {
+          "id": "tivoli-gardens",
+          "name": "Tivoli Gardens",
+          "area": "Vesterbro · Vesterbrogade 3",
+          "lat": 55.6736,
+          "lng": 12.5668,
+          "color": "lavender",
+          "description": "The world's second-oldest operating amusement park. Your dates fall inside the Halloween season (Oct 2 – Nov 1 2026): 20,000+ pumpkins, scarecrows, haunted houses, and autumn light displays — cozy rather than gory. Best experienced from late afternoon into the evening.",
+          "easter_egg": "Tivoli was a direct inspiration for Walt Disney when he was developing Disneyland. He visited in 1951 and cited the park's cleanliness, friendly atmosphere, and attention to detail as a model. H.C. Andersen walked these gardens regularly.",
+          "tags": [
+            {
+              "color": "lavender",
+              "text": "Halloween season"
+            },
+            {
+              "color": "rose",
+              "text": "evening light"
+            },
+            {
+              "color": "ink",
+              "text": "Vesterbro"
+            }
+          ]
+        },
+        {
+          "id": "manon-les-suites",
+          "name": "Manon les Suites (Guldsmeden Hotel)",
+          "area": "Near the Lakes / Vesterport · Gyldenløvesgade 19",
+          "lat": 55.6804,
+          "lng": 12.5612,
+          "color": "sage",
+          "description": "A five-star eco-hotel with a Bali-inspired indoor Junglefish Pool under a glass atrium, plus a rooftop spa (sauna, steam room, cold-bucket shower). Non-guest Spa Day Passes are available — roughly four hours of pool, sauna, steam room, and lounge access with breakfast, bookable in advance.",
+          "easter_egg": "The hotel's \"Guldsmeden\" parent group (the name means \"The Goldsmith\" in Danish) builds all its properties around a Balinese design philosophy — the Copenhagen version is the most dramatic expression of it, with a full tropical pool garden in a Nordic city.",
+          "notes": [
+            {
+              "label": "Note for Jamila",
+              "text": "The pool and lounge are the gentle core. The sauna and steam room are worth a comfort check with a doctor first."
+            }
+          ],
+          "tags": [
+            {
+              "color": "sage",
+              "text": "spa day"
+            },
+            {
+              "color": "lavender",
+              "text": "Jamila"
+            },
+            {
+              "color": "ink",
+              "text": "Vesterport"
+            }
+          ]
+        },
+        {
+          "id": "magstraede",
+          "name": "Magstræde",
+          "area": "Indre By · links Gammel Strand and Rådhusstræde",
+          "lat": 55.6764,
+          "lng": 12.5755,
+          "color": "rose",
+          "description": "One of the two oldest streets in Copenhagen, created in the 1520s, and among the very few retaining their original cobblestones. The half-timbered houses give it an unmistakably storybook feel — a strong pick for Jamila's fantasy aesthetic.",
+          "easter_egg": "\"Mag-\" in the street name derives from an old word for a latrine — it recalls \"Vestre Mag,\" a public privy that once stood here. The picturesque facade hides a decidedly unglamorous origin.",
+          "tags": [
+            {
+              "color": "rose",
+              "text": "1520s cobbles"
+            },
+            {
+              "color": "lavender",
+              "text": "storybook"
+            },
+            {
+              "color": "ink",
+              "text": "Indre By"
+            }
+          ]
+        },
+        {
+          "id": "nyhavn",
+          "name": "Nyhavn",
+          "area": "Indre By · off Kongens Nytorv",
+          "lat": 55.6797,
+          "lng": 12.5906,
+          "color": "gold",
+          "description": "The 17th-century canal lined with brightly painted townhouses, historic sailing ships, and waterfront restaurants. The oldest building (No. 9) dates from 1681. The dining on the canal itself is tourist-priced — better to walk it for atmosphere and eat elsewhere.",
+          "easter_egg": "H.C. Andersen lived at three Nyhavn addresses — No. 20 (where he wrote and published his very first fairy tales in May 1835), No. 67 (1848–65), and No. 18 (1871 until shortly before his death in 1875). A large anchor at the Kongens Nytorv end memorializes Danish sailors lost in WWII.",
+          "tags": [
+            {
+              "color": "gold",
+              "text": "canal"
+            },
+            {
+              "color": "lavender",
+              "text": "H.C. Andersen trail"
+            },
+            {
+              "color": "ink",
+              "text": "Indre By"
+            }
+          ]
+        },
+        {
+          "id": "rondo-bakery",
+          "name": "Rondo Bakery",
+          "area": "Nørrebro · Sjællandsgade 7",
+          "lat": 55.6932,
+          "lng": 12.5522,
+          "color": "gold",
+          "description": "A celebrated sourdough bakery opened in 2021 by the team behind wine bar Gaarden og Gaden. Famous for its \"bun & cheese\" and croissants, with press coverage in The Washington Post, BBC, and Vogue. Get there early — favorites sell out.",
+          "easter_egg": "The name is musical — like a musical rondo, the recipes return and repeat with variations. One travel writer described the tucked-away location as feeling \"like being in Harry Potter.\" The bakery grew out of a natural wine bar, which explains its unusually sophisticated flavor combinations.",
+          "tags": [
+            {
+              "color": "gold",
+              "text": "bakery"
+            },
+            {
+              "color": "rose",
+              "text": "go early"
+            },
+            {
+              "color": "ink",
+              "text": "Nørrebro"
+            }
+          ]
+        },
+        {
+          "id": "andersen-bakery",
+          "name": "Andersen Bakery",
+          "area": "Islands Brygge · Thorshavnsgade 26, 2300 Copenhagen S",
+          "lat": 55.6671,
+          "lng": 12.5783,
+          "color": "gold",
+          "description": "A Japanese-Danish fusion bakery with a genuinely unusual backstory. Japanese baker Shunsuke Takaki came to Copenhagen in 1959, fell in love with Danish baking traditions, and brought them back to Japan. Today, Andersen Bakery returns that exchange to Copenhagen: sakura mousse cakes, miso caramel croissants, cardamom buns, sake-infused sourdough, and Earl Grey petits fours alongside classic pain au chocolat and bolle med ost. Open daily 06:30–19:00. A second location exists at Ørestad (Ørestads Blvd. 49A, open 07:00–18:00).",
+          "easter_egg": "The \"Danish pastry\" that Takaki fell in love with in 1959 was itself not Danish in origin — it was introduced to Denmark in the 1850s by Austrian bakers, who called it \"Wienerbrød\" (Vienna bread). So the bakery's story is a loop: Austrian → Danish → Japanese → Danish again.",
+          "notes": [
+            {
+              "label": "Logistics",
+              "text": "Islands Brygge is ~3 km south of Kongens Nytorv across the harbor — not a drop-in on a walking day. Best combined with Reffen (same southeastern harbor arc) as a dedicated half-day."
+            },
+            {
+              "label": "Not Andersen & Maillard",
+              "text": "This is the Japanese-Danish Andersen Bakery, a distinct business."
+            }
+          ],
+          "tags": [
+            {
+              "color": "gold",
+              "text": "bakery"
+            },
+            {
+              "color": "lavender",
+              "text": "Japanese-Danish"
+            },
+            {
+              "color": "ink",
+              "text": "Islands Brygge"
+            }
+          ]
+        },
+        {
+          "id": "meatpacking-district",
+          "name": "Meatpacking District (Kødbyen)",
+          "area": "Vesterbro · between Central Station rail lines and Sønder Boulevard",
+          "lat": 55.668,
+          "lng": 12.558,
+          "color": "ink",
+          "description": "Three historic zones — Brown (oldest, ~1879–83), Grey, and White (opened 1934) — still operating as a working meat-industry district alongside galleries, restaurants, and bars. Nightlife concentrates in the Brown section around Flæsketorvet, liveliest after 21:00 Thu–Sat.",
+          "easter_egg": "The \"Meatpacking District\" name predates and directly inspired the naming of New York's Meatpacking District. A c.2000 \"Meat and Creativity\" urban program brought arts venues in alongside still-working butchers and fishmongers — both coexist today.",
+          "tags": [
+            {
+              "color": "ink",
+              "text": "working district"
+            },
+            {
+              "color": "lavender",
+              "text": "nightlife"
+            },
+            {
+              "color": "ink",
+              "text": "Vesterbro"
+            }
+          ]
+        },
+        {
+          "id": "freetown-christiania",
+          "name": "Freetown Christiania",
+          "area": "Christianshavn · Christiania, 1407 Copenhagen K",
+          "lat": 55.6731,
+          "lng": 12.5985,
+          "color": "sage",
+          "description": "Denmark's self-governing commune since 1971, on a former military base, and consistently one of Copenhagen's top tourist draws (~500,000 visitors/year). Major update since 2024: residents and police dug up the infamous Pusher Street by hand in April 2024, removing the open hash stalls. The area is safe to visit in daylight; photography is now generally permitted (previously restricted in Pusher Street). Discreet dealing has not fully vanished, but the open market is gone. Come for the self-built architecture, ramparts walk, music venues, and the remarkably self-contained community feel.",
+          "easter_egg": "Christiania has its own flag (three yellow dots on red, representing the three \"i\"s in \"Christiania\"), its own currency (historically), and its own entrance signs that read \"You are now leaving the EU.\" The yellow dots are sometimes interpreted as the \"o\"s in \"Love Love Love\" — the commune's founding spirit.",
+          "notes": [
+            {
+              "label": "Visit in daylight",
+              "text": "Calm and much changed since 2024, but discreet dealing persists."
+            }
+          ],
+          "tags": [
+            {
+              "color": "sage",
+              "text": "self-built"
+            },
+            {
+              "color": "rose",
+              "text": "since 1971"
+            },
+            {
+              "color": "ink",
+              "text": "Christianshavn"
+            }
+          ]
+        },
+        {
+          "id": "assistens-cemetery",
+          "name": "Assistens Cemetery",
+          "area": "Nørrebro · Kapelvej 2–4",
+          "lat": 55.6909,
+          "lng": 12.5494,
+          "color": "lavender",
+          "description": "Established 1760; today a lush, park-like cemetery where locals picnic in good weather. All three confirmed: H.C. Andersen (Plot P), Søren Kierkegaard (Plot A), Niels Bohr (Plot Q). Also buried here: physicist H.C. Ørsted (Plot E) and jazz legends Ben Webster and Kenny Drew. Maps at the Kapelvej entrance and yellow signposts guide you to the famous graves.",
+          "easter_egg": "H.C. Ørsted was such a close family friend of H.C. Andersen that Andersen had a standing weekly dinner invitation and called him \"the great Hans Christian\" — the two men shared not only a first name but a lifelong mutual admiration. Andersen's plot (P) is the more park-like side; Kierkegaard's (A) is nearer the entrance.",
+          "tags": [
+            {
+              "color": "lavender",
+              "text": "Andersen · Kierkegaard · Bohr"
+            },
+            {
+              "color": "sage",
+              "text": "park-like"
+            },
+            {
+              "color": "ink",
+              "text": "Nørrebro"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Section II — for Jamila",
+      "title": "Candlelight, jazz & *night church*",
+      "pins": [
+        {
+          "id": "candlelight-the-lord-of-the-rings",
+          "name": "Candlelight: The Lord of the Rings",
+          "area": "Indre By · Odd Fellow Palæet, Bredgade 28 · ~600 m from Kongens Nytorv",
+          "lat": 55.6829,
+          "lng": 12.5899,
+          "color": "lavender",
+          "description": "A Copenhagen Strings quartet performing Howard Shore's LOTR score by candlelight in a historic palace. Sells out; monitor the Fever listing for an October date. If unavailable, Odd Fellow Palæet runs other Candlelight shows in October (Hans Zimmer Oct 24, Studio Ghibli/Joe Hisaishi, a Halloween \"Haunted Evening\") — all seated and calm.",
+          "notes": [
+            {
+              "label": "Suggested, not yet confirmed",
+              "text": "Availability shifts constantly. Keep an eye on the Fever listing for October dates."
+            }
+          ],
+          "tags": [
+            {
+              "color": "lavender",
+              "text": "for Jamila"
+            },
+            {
+              "color": "rose",
+              "text": "candlelit"
+            },
+            {
+              "color": "ink",
+              "text": "Indre By"
+            }
+          ]
+        },
+        {
+          "id": "jazzhus-montmartre",
+          "name": "Jazzhus Montmartre",
+          "area": "Indre By · Store Regnegade 19A · ~350 m from Kongens Nytorv",
+          "lat": 55.6821,
+          "lng": 12.5822,
+          "color": "lavender",
+          "description": "An intimate, candlelit legendary jazz cellar where Dexter Gordon, Ben Webster, and Chet Baker all performed. Some folk and emerging-artist nights alongside jazz. Closest match to Jamila's \"moody\" music preference that's both atmospheric and walkable.",
+          "notes": [
+            {
+              "label": "Suggested, not yet confirmed",
+              "text": "Check the October programme."
+            }
+          ],
+          "tags": [
+            {
+              "color": "lavender",
+              "text": "for Jamila"
+            },
+            {
+              "color": "rose",
+              "text": "live jazz"
+            },
+            {
+              "color": "ink",
+              "text": "Indre By"
+            }
+          ]
+        },
+        {
+          "id": "natkirke-at-vor-frue-kirke",
+          "name": "Natkirke (Night Church) at Vor Frue Kirke",
+          "area": "Indre By · Frue Plads",
+          "lat": 55.6806,
+          "lng": 12.573,
+          "color": "lavender",
+          "description": "Candlelit evening sessions at Copenhagen Cathedral mixing prayer, electronica, poetry, and jazz. Genuinely moody, free, and unlike anything else in the city — a low-key atmospheric stop.",
+          "notes": [
+            {
+              "label": "Suggested, not yet confirmed",
+              "text": "Check session dates for October."
+            }
+          ],
+          "tags": [
+            {
+              "color": "lavender",
+              "text": "for Jamila"
+            },
+            {
+              "color": "sage",
+              "text": "free"
+            },
+            {
+              "color": "ink",
+              "text": "Indre By"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Section III — around Kongens Nytorv",
+      "title": "Gems within *a short walk*",
+      "pins": [
+        {
+          "id": "charlottenborg",
+          "name": "Charlottenborg (Kunsthal Charlottenborg)",
+          "area": "Kongens Nytorv 1 · ~150 m from anchor",
+          "lat": 55.6802,
+          "lng": 12.5871,
+          "color": "rose",
+          "description": "The oldest building on the square (1672–83), home to the Royal Danish Academy of Fine Arts, with big contemporary-art halls and the courtyard Apollo Bar.",
+          "notes": [
+            {
+              "label": "Hours",
+              "text": "Typically closed Mondays — verify October hours."
+            }
+          ],
+          "tags": [
+            {
+              "color": "rose",
+              "text": "art"
+            },
+            {
+              "color": "ink",
+              "text": "Kongens Nytorv"
+            }
+          ]
+        },
+        {
+          "id": "royal-danish-theatre-old-stage",
+          "name": "Royal Danish Theatre — Old Stage",
+          "area": "Kongens Nytorv 9 · ~100 m from anchor",
+          "lat": 55.6796,
+          "lng": 12.5861,
+          "color": "rose",
+          "description": "Grand 1874 opera/ballet house. H.C. Andersen sang in its chorus as a teenager. Affordable state-subsidized tickets; check the October program.",
+          "tags": [
+            {
+              "color": "rose",
+              "text": "opera & ballet"
+            },
+            {
+              "color": "lavender",
+              "text": "H.C. Andersen"
+            },
+            {
+              "color": "ink",
+              "text": "Kongens Nytorv"
+            }
+          ]
+        },
+        {
+          "id": "nikolaj-kunsthal",
+          "name": "Nikolaj Kunsthal",
+          "area": "Nikolaj Plads 10 · ~450 m from anchor",
+          "lat": 55.6788,
+          "lng": 12.5815,
+          "color": "rose",
+          "description": "Contemporary art inside a former whitewashed vaulted church; climb the spire for rooftop views.",
+          "notes": [
+            {
+              "label": "Hours",
+              "text": "Typically closed Mondays — verify October hours."
+            }
+          ],
+          "tags": [
+            {
+              "color": "rose",
+              "text": "art"
+            },
+            {
+              "color": "sage",
+              "text": "spire views"
+            },
+            {
+              "color": "ink",
+              "text": "Indre By"
+            }
+          ]
+        },
+        {
+          "id": "the-marble-church",
+          "name": "The Marble Church (Marmorkirken)",
+          "area": "Frederiksgade 4 · ~600 m from anchor",
+          "lat": 55.685,
+          "lng": 12.5893,
+          "color": "rose",
+          "description": "Scandinavia's largest church dome (31 m span, modeled on St. Peter's), which stood as a picturesque ruin for ~150 years before opening in 1894. Free entry; weekend dome climbs off-season.",
+          "tags": [
+            {
+              "color": "rose",
+              "text": "dome"
+            },
+            {
+              "color": "sage",
+              "text": "free entry"
+            },
+            {
+              "color": "ink",
+              "text": "Frederiksstaden"
+            }
+          ]
+        },
+        {
+          "id": "amalienborg-palace",
+          "name": "Amalienborg Palace",
+          "area": "Frederiksstaden · ~700 m from anchor",
+          "lat": 55.684,
+          "lng": 12.5931,
+          "color": "rose",
+          "description": "Four Rococo palaces around an octagonal square. Royal Life Guard changes daily at 12:00 noon.",
+          "tags": [
+            {
+              "color": "rose",
+              "text": "royal"
+            },
+            {
+              "color": "gold",
+              "text": "12:00 guard change"
+            },
+            {
+              "color": "ink",
+              "text": "Frederiksstaden"
+            }
+          ]
+        },
+        {
+          "id": "the-david-collection",
+          "name": "The David Collection",
+          "area": "Kronprinsessegade 30 · ~800 m from anchor",
+          "lat": 55.6843,
+          "lng": 12.5823,
+          "color": "lavender",
+          "description": "Free. The largest Islamic-art collection in Scandinavia plus Danish Golden Age painting (including Hammershøi), in an intimate townhouse. Ideal rainy-day stop.",
+          "notes": [
+            {
+              "label": "Hours",
+              "text": "Typically closed Mondays — verify October hours."
+            }
+          ],
+          "tags": [
+            {
+              "color": "lavender",
+              "text": "art"
+            },
+            {
+              "color": "sage",
+              "text": "free"
+            },
+            {
+              "color": "ink",
+              "text": "Kronprinsessen"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "title": "Quick-reference notes",
+    "items": [
+      {
+        "label": "Tivoli Food Hall is not Tivoli Gardens.",
+        "text": "The Food Hall has a free street entrance on Vesterbrogade 3 and a separate internal entrance from inside the Gardens."
+      },
+      {
+        "label": "Andersen Bakery is not Andersen & Maillard.",
+        "text": "Two distinct businesses. The confirmed pin is the Japanese-Danish Andersen Bakery at Islands Brygge."
+      },
+      {
+        "label": "All three at Assistens Cemetery:",
+        "text": "H.C. Andersen (Plot P), Søren Kierkegaard (Plot A), Niels Bohr (Plot Q)."
+      },
+      {
+        "label": "Reffen is extending its season into autumn 2026",
+        "text": "(Culture Night, autumn break, Halloween, ice-skating) — but hours will be event-based, not full summer operation. Verify at reffen.dk before relying on it."
+      },
+      {
+        "label": "Tivoli Halloween season",
+        "text": "runs Oct 2 – Nov 1 2026 — it covers your entire trip."
+      },
+      {
+        "label": "Danish autumn school holiday",
+        "text": "(week 42, ~Oct 12–16) ends just before you arrive — expect thinner crowds during Oct 17–24."
+      }
+    ]
+  },
+  "practical": {
+    "title": "October conditions & caveats",
+    "items": [
+      {
+        "label": "Weather",
+        "text": "Cool and changeable. Daytime highs around 9–12°C, nights around 7–8°C, with frequent overcast skies and rain. Bring a warm waterproof jacket, umbrella, and layers."
+      },
+      {
+        "label": "Daylight",
+        "text": "Around 10.5 hours. Sunrise ~07:30, sunset ~18:20 (CEST). Daylight Saving Time ends Oct 25, the day after you leave — so you keep the later evenings for the whole trip."
+      },
+      {
+        "label": "Reffen",
+        "text": "Exact October hours are unconfirmed. Verify on reffen.dk before the trip."
+      },
+      {
+        "label": "Museum closures",
+        "text": "The David Collection, Nikolaj Kunsthal, and Charlottenborg are commonly closed Mondays. Verify October hours for each."
+      },
+      {
+        "label": "Candlelight LOTR",
+        "text": "Availability shifts constantly. Monitor Fever for October dates."
+      },
+      {
+        "label": "Manon spa",
+        "text": "The pool and lounge are the gentle core; check the sauna and steam room with a doctor first."
+      },
+      {
+        "label": "Christiania",
+        "text": "Calm and much changed since 2024, but discreet dealing persists. Visit in daylight."
+      }
+    ]
+  }
+}
