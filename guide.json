@@ -47,7 +47,70 @@
     "live_label": "Live — built together, October 17–24",
     "added_label": "Section IV — added by you",
     "skyline_alt": "Illustrated Copenhagen skyline: Nyhavn façades, Church of Our Saviour, Børsen, the Round Tower",
-    "table_footnote": "Distances are straight-line from Kongens Nytorv. Coordinates come from address lookups and are good to a few tens of metres."
+    "table_footnote": "Distances are straight-line from Kongens Nytorv. Coordinates come from address lookups and are good to a few tens of metres.",
+    "background_photos": [
+      {
+        "src": "https://res.cloudinary.com/ffi8egjg/image/upload/f_auto,q_auto,w_900/v1790060726/trips/2026-10-copenhagen/backgrounds/l1r1yykdem8i5jqwska2.jpg",
+        "credit": {
+          "title": "Nyhavn houses and boats",
+          "author": "OleNeitzel",
+          "license": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0/",
+          "page": "https://commons.wikimedia.org/wiki/File:Nyhavn_houses_and_boats.jpg"
+        }
+      },
+      {
+        "src": "https://res.cloudinary.com/ffi8egjg/image/upload/f_auto,q_auto,w_900/v1790060727/trips/2026-10-copenhagen/backgrounds/kcskfbx1uialzrbz86nn.jpg",
+        "credit": {
+          "title": "Autumn in Copenhagen's King's Garden, Denmark Efterår i Københavns Kongens Have, Danmark (30177773054)",
+          "author": "Kristoffer Trolle",
+          "license": "CC BY 2.0",
+          "license_url": "https://creativecommons.org/licenses/by/2.0/",
+          "page": "https://commons.wikimedia.org/wiki/File:Autumn_in_Copenhagen%27s_King%27s_Garden,_Denmark_Efter%C3%A5r_i_K%C3%B8benhavns_Kongens_Have,_Danmark_(30177773054).jpg"
+        }
+      },
+      {
+        "src": "https://res.cloudinary.com/ffi8egjg/image/upload/f_auto,q_auto,w_900/v1790060728/trips/2026-10-copenhagen/backgrounds/twwmrrdhyhgxegpijeqw.jpg",
+        "credit": {
+          "title": "Copenhagen twillight (49793422008)",
+          "author": "Stig Nygaard",
+          "license": "CC BY 2.0",
+          "license_url": "https://creativecommons.org/licenses/by/2.0/",
+          "page": "https://commons.wikimedia.org/wiki/File:Copenhagen_twillight_(49793422008).jpg"
+        }
+      },
+      {
+        "src": "https://res.cloudinary.com/ffi8egjg/image/upload/f_auto,q_auto,w_900/v1790060729/trips/2026-10-copenhagen/backgrounds/yocg9oxbj8kmq21hvjf0.jpg",
+        "credit": {
+          "title": "Amaliehaven, Marble Church and Schack's Palace",
+          "author": "OleNeitzel",
+          "license": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0/",
+          "page": "https://commons.wikimedia.org/wiki/File:Amaliehaven,_Marble_Church_and_Schack%27s_Palace.jpg"
+        }
+      },
+      {
+        "src": "https://res.cloudinary.com/ffi8egjg/image/upload/f_auto,q_auto,w_900/v1790060730/trips/2026-10-copenhagen/backgrounds/b22krlq3xgmiczohdgux.jpg",
+        "credit": {
+          "title": "Christianshavn Canal (15911963215)",
+          "author": "Tony Webster",
+          "license": "CC BY 2.0",
+          "license_url": "https://creativecommons.org/licenses/by/2.0/",
+          "page": "https://commons.wikimedia.org/wiki/File:Christianshavn_Canal_(15911963215).jpg"
+        }
+      },
+      {
+        "src": "https://res.cloudinary.com/ffi8egjg/image/upload/f_auto,q_auto,w_900/v1790060731/trips/2026-10-copenhagen/backgrounds/d1pue92dsatprfzej6kz.jpg",
+        "credit": {
+          "title": "002 Copenhagen landmark - The Round Tower (Rundetaarn) spiral ramp",
+          "author": "Marek Ślusarczyk",
+          "license": "CC BY 3.0",
+          "license_url": "https://creativecommons.org/licenses/by/3.0/",
+          "page": "https://commons.wikimedia.org/wiki/File:002_Copenhagen_landmark_-_The_Round_Tower_(Rundetaarn)_spiral_ramp.jpg"
+        }
+      }
+    ],
+    "credits_note": "Background photos from Wikimedia Commons, tinted and faded. Skyline illustration by us."
   },
   "sections": [
     {

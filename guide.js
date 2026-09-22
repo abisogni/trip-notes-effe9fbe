@@ -9,6 +9,33 @@ function gEsc(s) {
 // *word* -> <em>word</em> (after escaping, so JSON stays text-only)
 function gEm(s) { return gEsc(s).replace(/\*(.+?)\*/g, "<em>$1</em>"); }
 
+// Scatter slots for the fixed corkboard layer (viewport %, rotation deg).
+// Fixed positioning means these stay put as the page scrolls behind it —
+// a wallpaper, not tied to page length. Cycles if there are more photos.
+const CORK_SLOTS = [
+  { top: 6, left: 4, w: 15, rot: -7 },
+  { top: 62, left: 2, w: 13, rot: 5 },
+  { top: 14, left: 84, w: 15, rot: 6 },
+  { top: 70, left: 85, w: 14, rot: -5 },
+  { top: 38, left: 92, w: 11, rot: 8 },
+  { top: 88, left: 12, w: 12, rot: -4 },
+  { top: 40, left: -2, w: 12, rot: 4 },
+  { top: 4, left: 40, w: 10, rot: -6 },
+];
+
+function renderCorkboard(photos) {
+  const board = document.getElementById("corkboard");
+  if (!photos || !photos.length) return;
+  board.innerHTML = photos
+    .map((p, i) => {
+      const s = CORK_SLOTS[i % CORK_SLOTS.length];
+      return `<div class="cork-photo" style="top:${s.top}%;left:${s.left}%;width:${s.w}vw;transform:rotate(${s.rot}deg);">
+        <span class="cork-pin"></span><img src="${gEsc(p.src)}" alt="">
+      </div>`;
+    })
+    .join("");
+}
+
 function gDistKm(a, lat, lng) {
   const R = 6371, rad = (d) => (d * Math.PI) / 180;
   const dp = rad(lat - a.lat), dl = rad(lng - a.lng);
@@ -47,6 +74,7 @@ function gPinHtml(p, num, anchor) {
 function renderGuide(g) {
   const t = g.trip, anchor = t.anchor;
   document.title = t.page_title;
+  renderCorkboard(t.background_photos);
 
   document.getElementById("hero").innerHTML = `
   <div class="eyebrow">${gEsc(t.eyebrow)}</div>
@@ -79,6 +107,14 @@ function renderGuide(g) {
 <div class="ref-table-section"><h3>Quick reference</h3><div class="table-scroll"><table>
   <thead><tr><th>#</th><th>Location</th><th>Area</th><th>GPS</th><th>Dist.</th></tr></thead><tbody>${rows}</tbody></table></div>
   <p style="font-size:11px;color:var(--muted);margin-top:10px;">${gEsc(t.table_footnote)}</p></div>`;
+
+  const cl = (t.background_photos || []).map((p) => {
+    const c = p.credit;
+    return `<a href="${gEsc(c.page)}" target="_blank" rel="noopener">${gEsc(c.title)}</a> by ${gEsc(c.author)}, <a href="${gEsc(c.license_url)}" target="_blank" rel="noopener">${gEsc(c.license)}</a>`;
+  });
+  document.getElementById("credits").innerHTML = cl.length
+    ? `<strong>Background photo credits.</strong> ${cl.join(" &nbsp;·&nbsp; ")}.${t.credits_note ? " " + gEsc(t.credits_note) : ""}`
+    : "";
 }
 
 async function loadGuide() {

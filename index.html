@@ -391,7 +391,7 @@
   tr:hover td { background: var(--white); }
 
   @media (max-width: 600px) {
-    .hero, .ref-box, .content { padding-left: 18px; padding-right: 18px; }
+    .hero, .ref-box, .content, .credits { padding-left: 18px; padding-right: 18px; }
     .hero { padding-top: 40px; }
     .pin { grid-template-columns: 42px 1fr; gap: 0 10px; }
     .prac-grid { grid-template-columns: 1fr; }
@@ -620,9 +620,41 @@
   /* [hidden] must win over the display:flex rules above */
   .modal-overlay[hidden],
   .lightbox[hidden] { display: none; }
+
+  /* ─── CORKBOARD (fixed behind everything — a wallpaper, not tied to page length) ─── */
+  .corkboard { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+  .cork-photo {
+    position: absolute;
+    padding: 5px 5px 15px;
+    min-width: 110px;
+    background: var(--white);
+    box-shadow: 0 10px 26px -10px rgba(28, 24, 20, 0.28);
+    opacity: 0.4;
+  }
+  .cork-photo img {
+    display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover;
+    filter: sepia(0.4) saturate(0.5) brightness(1.12) contrast(0.88);
+  }
+  .cork-pin {
+    position: absolute; top: -6px; left: 50%; transform: translateX(-50%);
+    width: 11px; height: 11px; border-radius: 50%; background: var(--rose);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.35), inset 0 -2px 2px rgba(0, 0, 0, 0.25);
+  }
+
+  /* ─── PAPER (the real page — solid, floats over the corkboard) ─── */
+  .paper { position: relative; max-width: 860px; margin: 0 auto; background: var(--cream); box-shadow: 0 24px 64px -28px rgba(28, 24, 20, 0.4); }
+  @media (max-width: 900px) { .paper { box-shadow: none; } }
+
+  .credits { max-width: 800px; margin: 0 auto; padding: 18px 40px 0; font-size: 10.5px; line-height: 1.7; color: var(--muted); }
+  .credits a { color: var(--muted); text-decoration: underline; text-decoration-color: var(--faint); }
+  .credits strong { color: var(--ink); font-weight: 500; }
 </style>
 </head>
 <body>
+
+<div class="corkboard" id="corkboard" aria-hidden="true"></div>
+
+<div class="paper">
 
 <!-- HERO -->
 <div class="hero" id="hero"></div>
@@ -683,7 +715,10 @@
 
 <!-- bump version + timestamp on every push, so phones can confirm they have the latest -->
 <div class="skyline skyline-foot" aria-hidden="true"></div>
-<div class="build-info">Page v4 · updated 2026-09-21</div>
+<div class="credits" id="credits"></div>
+<div class="build-info">Page v5 · updated 2026-09-22</div>
+
+</div><!-- /paper -->
 
 <!-- IDENTITY MODAL -->
 <div class="modal-overlay" id="identity-modal" hidden>
@@ -708,9 +743,9 @@
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="config.js?v=4"></script>
-<script>window.GUIDE_VERSION = "4";</script>
-<script src="guide.js?v=4"></script>
-<script src="app.js?v=4"></script>
+<script src="config.js?v=5"></script>
+<script>window.GUIDE_VERSION = "5";</script>
+<script src="guide.js?v=5"></script>
+<script src="app.js?v=5"></script>
 </body>
 </html>
