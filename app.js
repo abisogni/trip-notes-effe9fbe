@@ -622,7 +622,7 @@ function renderForecast(data, stampText) {
     const date = dt.toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" });
     const [icon, cls, label] = fcKind(d.weather_code[i]);
     const pop = d.precipitation_probability_max[i];
-    return `<div class="fc-day${iso === today ? " is-today" : ""}" role="group" aria-label="${dow} ${date}: ${label}, high ${Math.round(d.temperature_2m_max[i])}, low ${Math.round(d.temperature_2m_min[i])} degrees, ${pop}% chance of rain">
+    return `<div class="fc-day ${["rain", "snow", "storm"].includes(icon) ? "fc-wet" : "fc-dry"}${iso === today ? " is-today" : ""}" role="group" aria-label="${dow} ${date}: ${label}, high ${Math.round(d.temperature_2m_max[i])}, low ${Math.round(d.temperature_2m_min[i])} degrees, ${pop}% chance of rain">
       <div class="fc-dow">${iso === today ? "Today" : dow}</div>
       <div class="fc-date">${date}</div>
       <span class="fc-icon ${cls}" aria-hidden="true"><svg viewBox="0 0 24 24">${FC_ICONS[icon]}</svg></span>
