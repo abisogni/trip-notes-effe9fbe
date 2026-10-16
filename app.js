@@ -587,7 +587,7 @@ function setupRealtime() {
 
 
 // ───────────────────────── forecast ─────────────────────────
-// 7-day forecast from Open-Meteo (free, no key). Last good response is cached so the
+// Trip-dates forecast (TRIP.forecast) from Open-Meteo (free, no key). Last good response is cached so the
 // strip still shows something with a weak signal; it hides itself if there is nothing.
 
 const FC_ICONS = {
@@ -632,18 +632,18 @@ function renderForecast(data, stampText) {
     </div>`;
   }).join("");
   el.innerHTML = `<div class="forecast-head">
-      <div class="forecast-title">The week <em>ahead</em></div>
+      <div class="forecast-title">Trip <em>weather</em></div>
       <div class="forecast-stamp">${escapeHtml(stampText)}</div>
-    </div><div class="forecast-grid">${cells}</div>`;
+    </div><div class="forecast-grid" style="--fc-n:${d.time.length}">${cells}</div>`;
   el.hidden = false;
 }
 
 async function loadForecast() {
-  const CACHE_KEY = TRIP.id + "_forecast";
+  const CACHE_KEY = TRIP.id + "_forecast_" + TRIP.forecast.start;
   const { lat, lng } = TRIP.hotel;
   const url = "https://api.open-meteo.com/v1/forecast?latitude=" + lat + "&longitude=" + lng +
     "&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max" +
-    "&timezone=Europe%2FCopenhagen&forecast_days=7";
+    "&timezone=Europe%2FCopenhagen&start_date=" + TRIP.forecast.start + "&end_date=" + TRIP.forecast.end;
   const hhmm = (ts) => new Date(ts).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", timeZone: "Europe/Copenhagen" });
   try {
     const res = await fetch(url);

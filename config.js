@@ -18,6 +18,9 @@ const TRIP = {
   // Map anchor = Kongens Nytorv (the guide's reference point). Swap for the real hotel once known.
   hotel: { lat: 55.6806, lng: 12.5859, name: "Kongens Nytorv (anchor — hotel TBD)" },
 
+  // Forecast window (Copenhagen local dates, inclusive).
+  forecast: { start: "2026-10-17", end: "2026-10-24" },
+
   // Nominatim viewbox "left,top,right,bottom" (lon/lat) around central Copenhagen,
   // and the suffix appended to typed place names when geocoding.
   geocodeViewbox: "12.45,55.72,12.72,55.62",

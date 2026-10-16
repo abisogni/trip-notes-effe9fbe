@@ -134,7 +134,7 @@
   }
   .forecast-grid {
     display: grid;
-    grid-template-columns: repeat(7, minmax(0, 1fr));
+    grid-template-columns: repeat(var(--fc-n, 8), minmax(0, 1fr));
     gap: 6px;
   }
   .fc-day {
@@ -166,7 +166,7 @@
   .fc-pop { margin-top: 4px; font-size: 11px; color: var(--lavender); font-weight: 400; }
   @media (max-width: 600px) {
     .forecast { padding: 22px 12px 18px; }
-    .forecast-grid { gap: 4px; }
+    .forecast-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
     .fc-day { padding: 8px 0 7px; border-radius: 8px; }
     .fc-dow { font-size: 11px; letter-spacing: 0.04em; }
     .fc-icon { width: 22px; height: 22px; }
@@ -730,8 +730,8 @@
 
 <div class="skyline" id="skyline-top" role="img" aria-label=""></div>
 
-<!-- 7-DAY FORECAST -->
-<section class="forecast" id="forecast" aria-label="Seven-day forecast" hidden></section>
+<!-- TRIP FORECAST -->
+<section class="forecast" id="forecast" aria-label="Trip forecast" hidden></section>
 
 <!-- REF BOX -->
 <div class="ref-box" id="ref-box"></div>
