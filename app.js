@@ -585,6 +585,82 @@ function setupRealtime() {
     .subscribe();
 }
 
+
+// ───────────────────────── forecast ─────────────────────────
+// 7-day forecast from Open-Meteo (free, no key). Last good response is cached so the
+// strip still shows something with a weak signal; it hides itself if there is nothing.
+
+const FC_ICONS = {
+  sun: '<circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5.3 5.3l1.7 1.7M17 17l1.7 1.7M5.3 18.7L7 17M17 7l1.7-1.7"/>',
+  partly: '<circle cx="9" cy="9" r="3.2"/><path d="M9 2.8v1.4M2.8 9h1.4M4.6 4.6l1 1M13.4 4.6l-1 1"/><path d="M8 19.5h9.2a3.6 3.6 0 0 0 .4-7.2 5 5 0 0 0-9.4 1.3A3 3 0 0 0 8 19.5z"/>',
+  cloud: '<path d="M7 19h10.5a4 4 0 0 0 .5-7.97 5.6 5.6 0 0 0-10.7 1.4A3.3 3.3 0 0 0 7 19z"/>',
+  fog: '<path d="M4 9h16M3 13h14M6 17h15"/>',
+  rain: '<path d="M7 14h10.5a3.7 3.7 0 0 0 .5-7.4 5.2 5.2 0 0 0-9.9 1.3A3.1 3.1 0 0 0 7 14z"/><path d="M8.5 17.5l-1 2.5M12.5 17.5l-1 2.5M16.5 17.5l-1 2.5"/>',
+  snow: '<path d="M7 14h10.5a3.7 3.7 0 0 0 .5-7.4 5.2 5.2 0 0 0-9.9 1.3A3.1 3.1 0 0 0 7 14z"/><path d="M8.5 18h.01M12.5 19.5h.01M16.5 18h.01M10.5 21h.01M14.5 21.5h.01"/>',
+  storm: '<path d="M7 13.5h10.5a3.7 3.7 0 0 0 .5-7.4 5.2 5.2 0 0 0-9.9 1.3A3.1 3.1 0 0 0 7 13.5z"/><path d="M12.5 14.5l-2.2 3.5h3l-2 3.5"/>',
+};
+
+function fcKind(code) {
+  if (code === 0) return ["sun", "fc-sun", "Clear"];
+  if (code <= 2) return ["partly", "fc-sun", "Partly cloudy"];
+  if (code === 3) return ["cloud", "fc-cloud", "Overcast"];
+  if (code === 45 || code === 48) return ["fog", "fc-cloud", "Fog"];
+  if (code >= 71 && code <= 77 || code === 85 || code === 86) return ["snow", "fc-snow", "Snow"];
+  if (code >= 95) return ["storm", "fc-rain", "Thunderstorm"];
+  if (code >= 51 && code <= 57) return ["rain", "fc-rain", "Drizzle"];
+  return ["rain", "fc-rain", "Rain"];
+}
+
+function renderForecast(data, stampText) {
+  const el = document.getElementById("forecast");
+  const d = data.daily;
+  const today = new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Copenhagen" }).format(new Date());
+  const cells = d.time.map((iso, i) => {
+    const [y, m, day] = iso.split("-").map(Number);
+    const dt = new Date(Date.UTC(y, m - 1, day, 12));
+    const dow = dt.toLocaleDateString("en-GB", { weekday: "short", timeZone: "UTC" });
+    const date = dt.toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" });
+    const [icon, cls, label] = fcKind(d.weather_code[i]);
+    const pop = d.precipitation_probability_max[i];
+    return `<div class="fc-day${iso === today ? " is-today" : ""}" role="group" aria-label="${dow} ${date}: ${label}, high ${Math.round(d.temperature_2m_max[i])}, low ${Math.round(d.temperature_2m_min[i])} degrees, ${pop}% chance of rain">
+      <div class="fc-dow">${iso === today ? "Today" : dow}</div>
+      <div class="fc-date">${date}</div>
+      <span class="fc-icon ${cls}" aria-hidden="true"><svg viewBox="0 0 24 24">${FC_ICONS[icon]}</svg></span>
+      <div class="fc-hi">${Math.round(d.temperature_2m_max[i])}°</div>
+      <div class="fc-lo">${Math.round(d.temperature_2m_min[i])}°</div>
+      <div class="fc-pop">${pop}%</div>
+    </div>`;
+  }).join("");
+  el.innerHTML = `<div class="forecast-head">
+      <div class="forecast-title">The week <em>ahead</em></div>
+      <div class="forecast-stamp">${escapeHtml(stampText)}</div>
+    </div><div class="forecast-grid">${cells}</div>`;
+  el.hidden = false;
+}
+
+async function loadForecast() {
+  const CACHE_KEY = TRIP.id + "_forecast";
+  const { lat, lng } = TRIP.hotel;
+  const url = "https://api.open-meteo.com/v1/forecast?latitude=" + lat + "&longitude=" + lng +
+    "&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max" +
+    "&timezone=Europe%2FCopenhagen&forecast_days=7";
+  const hhmm = (ts) => new Date(ts).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", timeZone: "Europe/Copenhagen" });
+  try {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error("forecast " + res.status);
+    const data = await res.json();
+    if (!data.daily || !data.daily.time) throw new Error("forecast shape");
+    renderForecast(data, "Open-Meteo · " + hhmm(Date.now()));
+    try { localStorage.setItem(CACHE_KEY, JSON.stringify({ at: Date.now(), data })); } catch (e) {}
+  } catch (err) {
+    console.warn(err);
+    try {
+      const c = JSON.parse(localStorage.getItem(CACHE_KEY));
+      if (c && c.data) renderForecast(c.data, "Saved " + hhmm(c.at) + " · offline");
+    } catch (e) {}
+  }
+}
+
 // ───────────────────────── init ─────────────────────────
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -592,6 +668,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   initLightbox();
   ensureIdentity();
   initAddPlace();
+  loadForecast();
 
   // Guide pins come from guide.json; everything below works off the rendered DOM.
   try {

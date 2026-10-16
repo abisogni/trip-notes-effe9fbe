@@ -104,6 +104,75 @@
   .t-lavender { background: #e2ddf0; color: #352d5c; }
   .t-ink      { background: #dedad4; color: #2a2018; }
 
+  /* ─── FORECAST ─── */
+  .forecast {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 26px 40px 22px;
+    border-bottom: 1px solid var(--faint);
+  }
+  .forecast-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .forecast-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+  .forecast-title em { font-style: italic; color: var(--rose); }
+  .forecast-stamp {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #6a5f56;
+    text-align: right;
+  }
+  .forecast-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 6px;
+  }
+  .fc-day {
+    background: var(--white);
+    border: 1px solid var(--faint);
+    border-radius: 10px;
+    padding: 10px 2px 9px;
+    text-align: center;
+    line-height: 1.3;
+  }
+  .fc-day.is-today { border-color: var(--rose); }
+  .fc-dow {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #6a5f56;
+    font-weight: 400;
+  }
+  .fc-day.is-today .fc-dow { color: var(--rose); }
+  .fc-date { font-size: 10px; color: #6a5f56; margin-bottom: 6px; }
+  .fc-icon { display: block; width: 26px; height: 26px; margin: 0 auto 6px; }
+  .fc-icon svg { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .fc-sun   { color: var(--gold); }
+  .fc-cloud { color: var(--muted); }
+  .fc-rain  { color: var(--lavender); }
+  .fc-snow  { color: var(--sage); }
+  .fc-hi { font-family: 'Playfair Display', serif; font-size: 16px; color: var(--ink); }
+  .fc-lo { font-size: 11px; color: #6a5f56; }
+  .fc-pop { margin-top: 4px; font-size: 10px; color: var(--lavender); font-weight: 400; }
+  @media (max-width: 600px) {
+    .forecast { padding: 22px 12px 18px; }
+    .forecast-grid { gap: 4px; }
+    .fc-day { padding: 8px 0 7px; border-radius: 8px; }
+    .fc-dow { font-size: 9px; letter-spacing: 0.06em; }
+    .fc-icon { width: 22px; height: 22px; }
+    .fc-hi { font-size: 14px; }
+  }
+
   /* ─── REFERENCE BOX ─── */
   .ref-box {
     max-width: 800px;
@@ -660,6 +729,9 @@
 <div class="hero" id="hero"></div>
 
 <div class="skyline" id="skyline-top" role="img" aria-label=""></div>
+
+<!-- 7-DAY FORECAST -->
+<section class="forecast" id="forecast" aria-label="Seven-day forecast" hidden></section>
 
 <!-- REF BOX -->
 <div class="ref-box" id="ref-box"></div>
