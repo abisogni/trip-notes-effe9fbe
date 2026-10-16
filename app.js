@@ -567,6 +567,7 @@ function initAddPlace() {
 // so family following along can see what is new at a glance. Refreshes live.
 
 let latestItems = [];
+let latestConnected = false; // true only while the realtime channel is subscribed
 
 function relTime(iso) {
   const s = Math.max(0, (Date.now() - new Date(iso).getTime()) / 1000);
@@ -589,7 +590,7 @@ function renderLatest() {
   const el = document.getElementById("latest");
   const head = `<div class="latest-head">
       <div class="latest-title">Latest <em>from the trip</em></div>
-      <div class="latest-live">Live</div>
+      <div class="latest-live${latestConnected ? " is-connected" : ""}">${latestConnected ? "Live" : "Reload to update"}</div>
     </div>`;
   if (!latestItems.length) {
     el.innerHTML = head + `<div class="latest-empty">Nothing yet. Notes, photos and new places from Alex and Jamila will show up here as they happen.</div>`;
@@ -660,7 +661,10 @@ function setupRealtime() {
         journal.querySelector(".journal-toggle").classList.add("has-new");
       }
     })
-    .subscribe();
+    .subscribe((status) => {
+      latestConnected = status === "SUBSCRIBED";
+      if (!document.getElementById("latest").hidden) renderLatest();
+    });
 }
 
 
