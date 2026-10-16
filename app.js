@@ -561,6 +561,82 @@ function initAddPlace() {
   document.getElementById("add-place-btn").addEventListener("click", submitAddPlace);
 }
 
+
+// ───────────────────────── latest updates ─────────────────────────
+// The five most recent things added to the site (notes, photos, new places), newest first,
+// so family following along can see what is new at a glance. Refreshes live.
+
+let latestItems = [];
+
+function relTime(iso) {
+  const s = Math.max(0, (Date.now() - new Date(iso).getTime()) / 1000);
+  if (s < 60) return "just now";
+  if (s < 3600) return Math.floor(s / 60) + " min ago";
+  if (s < 86400) return Math.floor(s / 3600) + " h ago";
+  return new Date(iso).toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short", timeZone: "Europe/Copenhagen" });
+}
+
+function thumbUrl(url) {
+  return url.includes("/upload/") ? url.replace("/upload/", "/upload/c_fill,w_144,h_144,f_auto,q_auto/") : url;
+}
+
+function whoClass(name) {
+  const n = String(name).trim().toLowerCase();
+  return n === "alex" ? "" : n === "jamila" ? "who-jamila" : "who-other";
+}
+
+function renderLatest() {
+  const el = document.getElementById("latest");
+  const head = `<div class="latest-head">
+      <div class="latest-title">Latest <em>from the trip</em></div>
+      <div class="latest-live">Live</div>
+    </div>`;
+  if (!latestItems.length) {
+    el.innerHTML = head + `<div class="latest-empty">Nothing yet. Notes, photos and new places from Alex and Jamila will show up here as they happen.</div>`;
+    el.hidden = false;
+    return;
+  }
+  const rows = latestItems.map((it, i) => {
+    const fresh = i === 0 && Date.now() - new Date(it.at).getTime() < 3 * 3600 * 1000;
+    const who = escapeHtml(it.author);
+    let verb, snippet = it.text || "";
+    if (it.kind === "pin") verb = "added a place";
+    else if (it.photo && it.text) verb = "added a photo and note";
+    else if (it.photo) verb = "added a photo";
+    else verb = "wrote a note";
+    const lead = it.photo
+      ? `<div class="lt-thumb" style="background-image:url('${escapeHtml(thumbUrl(it.photo))}')" aria-hidden="true"></div>`
+      : `<div class="lt-badge ${whoClass(it.author)}" aria-hidden="true">${escapeHtml(String(it.author).trim().charAt(0).toUpperCase() || "?")}</div>`;
+    return `<button type="button" class="lt-item${fresh ? " is-new" : ""}" data-pin-id="${escapeHtml(it.pinId)}" title="${escapeHtml(fmtTimestamp(it.at))}">
+      ${lead}
+      <div class="lt-body">
+        <div class="lt-line"><strong>${who}</strong> ${verb}${it.kind === "pin" ? ": " : " at "}<span class="lt-where">${escapeHtml(it.place)}</span>${fresh ? '<span class="lt-new">New</span>' : ""}</div>
+        ${snippet ? `<div class="lt-snippet">${escapeHtml(snippet)}</div>` : ""}
+      </div>
+      <div class="lt-when">${escapeHtml(relTime(it.at))}</div>
+    </button>`;
+  }).join("");
+  el.innerHTML = head + `<div class="latest-list">${rows}</div>`;
+  el.hidden = false;
+  el.querySelectorAll(".lt-item").forEach((b) => b.addEventListener("click", () => jumpToPin(b.dataset.pinId)));
+}
+
+async function loadLatest() {
+  if (!supabaseClient) return;
+  const [c, p] = await Promise.all([
+    supabaseClient.from(TRIP.commentsTable).select("id,pin_id,pin_name,author,comment_text,photo_url,created_at")
+      .eq("trip_id", TRIP.id).order("created_at", { ascending: false }).limit(5),
+    supabaseClient.from(TRIP.pinsTable).select("id,name,added_by,notes,created_at")
+      .eq("trip_id", TRIP.id).order("created_at", { ascending: false }).limit(5),
+  ]);
+  if (c.error || p.error) return;
+  latestItems = [
+    ...(c.data || []).map((r) => ({ kind: "comment", at: r.created_at, author: r.author, place: r.pin_name, pinId: r.pin_id, text: r.comment_text, photo: r.photo_url })),
+    ...(p.data || []).map((r) => ({ kind: "pin", at: r.created_at, author: r.added_by, place: r.name, pinId: r.id, text: r.notes, photo: null })),
+  ].sort((x, y) => new Date(y.at) - new Date(x.at)).slice(0, 5);
+  renderLatest();
+}
+
 // ───────────────────────── realtime ─────────────────────────
 
 function setupRealtime() {
@@ -570,8 +646,10 @@ function setupRealtime() {
     .channel(TRIP.realtimeChannel)
     .on("postgres_changes", { event: "INSERT", schema: "public", table: TRIP.pinsTable, filter: `trip_id=eq.${TRIP.id}` }, (payload) => {
       addNewPinToPage(payload.new);
+      loadLatest();
     })
     .on("postgres_changes", { event: "INSERT", schema: "public", table: TRIP.commentsTable, filter: `trip_id=eq.${TRIP.id}` }, (payload) => {
+      loadLatest();
       const pinEl = document.getElementById("pin-" + payload.new.pin_id);
       if (!pinEl) return;
       const journal = pinEl.querySelector(".journal");
@@ -691,5 +769,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   } else {
     await loadExistingNewPins();
     setupRealtime();
+    loadLatest();
+    setInterval(() => { if (latestItems.length) renderLatest(); }, 60000);
   }
 });

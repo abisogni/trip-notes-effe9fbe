@@ -104,6 +104,120 @@
   .t-lavender { background: #e2ddf0; color: #352d5c; }
   .t-ink      { background: #dedad4; color: #2a2018; }
 
+  /* ─── LATEST UPDATES ─── */
+  .latest {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 26px 40px 8px;
+  }
+  .latest-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .latest-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+  .latest-title em { font-style: italic; color: var(--rose); }
+  .latest-live {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #6a5f56;
+  }
+  .latest-live::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--sage);
+    box-shadow: 0 0 0 0 rgba(94, 140, 118, 0.5);
+    animation: latest-pulse 2.4s ease-out infinite;
+  }
+  @keyframes latest-pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(94, 140, 118, 0.5); }
+    70%  { box-shadow: 0 0 0 7px rgba(94, 140, 118, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(94, 140, 118, 0); }
+  }
+  @media (prefers-reduced-motion: reduce) { .latest-live::before { animation: none; } }
+  .latest-list { display: flex; flex-direction: column; gap: 6px; }
+  .lt-item {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+    font: inherit;
+    color: inherit;
+    background: var(--white);
+    border: 1px solid var(--faint);
+    border-radius: 10px;
+    padding: 9px 12px 9px 9px;
+    cursor: pointer;
+  }
+  .lt-item:hover { border-color: var(--rose); }
+  .lt-item.is-new { border-color: var(--rose); }
+  .lt-thumb {
+    flex: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    background: var(--faint) center / cover no-repeat;
+  }
+  .lt-badge {
+    flex: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    background: #f2dede;
+    color: #6b2c2c;
+  }
+  .lt-badge.who-jamila { background: #d5e8de; color: #27513e; }
+  .lt-badge.who-other  { background: #e2ddf0; color: #352d5c; }
+  .lt-body { min-width: 0; flex: 1; line-height: 1.45; }
+  .lt-line { font-size: 13px; color: var(--ink); font-weight: 400; }
+  .lt-line .lt-where { color: var(--muted); font-weight: 300; }
+  .lt-snippet {
+    font-size: 12px;
+    color: #6a5f56;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .lt-when { flex: none; font-size: 11px; color: #6a5f56; text-align: right; white-space: nowrap; }
+  .lt-new {
+    display: inline-block;
+    margin-left: 6px;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--rose);
+  }
+  .latest-empty {
+    background: var(--white);
+    border: 1px dashed var(--faint);
+    border-radius: 10px;
+    padding: 16px 18px;
+    font-size: 13px;
+    color: #6a5f56;
+  }
+  @media (max-width: 600px) {
+    .latest { padding: 22px 12px 6px; }
+    .lt-when { align-self: flex-start; padding-top: 2px; }
+  }
+
   /* ─── FORECAST ─── */
   .forecast {
     max-width: 800px;
@@ -734,6 +848,9 @@
 <div class="hero" id="hero"></div>
 
 <div class="skyline" id="skyline-top" role="img" aria-label=""></div>
+
+<!-- LATEST UPDATES -->
+<section class="latest" id="latest" aria-label="Latest updates from the trip" hidden></section>
 
 <!-- TRIP FORECAST -->
 <section class="forecast" id="forecast" aria-label="Trip forecast" hidden></section>
