@@ -16,7 +16,7 @@ const TRIP = {
   realtimeChannel: "2026-10-copenhagen-live",
 
   // Home base: Manon les Suites (Guldsmeden), Gyldenløvesgade 19. Centres the map and the forecast.
-  // Guide distances still run from Kongens Nytorv (guide.json "anchor").
+  // Guide distances run from the same point (guide.json "anchor" = hotel).
   hotel: { lat: 55.6804, lng: 12.5612, name: "Manon les Suites (Guldsmeden)" },
 
   // Forecast window (Copenhagen local dates, inclusive).

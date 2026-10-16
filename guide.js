@@ -63,7 +63,7 @@ function gPinHtml(p, num, anchor) {
       <a href="https://maps.apple.com/?q=${q}&ll=${p.lat},${p.lng}">Apple Maps</a> &nbsp;·&nbsp;
       <a href="https://www.google.com/maps/search/?api=1&query=${p.lat},${p.lng}">Google Maps</a>
     </div>
-    <div class="pin-meta-row"><span class="pin-dist">${km.toFixed(2)} km from ${gEsc(anchor.name)} — ${gWalk(km)}</span></div>
+    <div class="pin-meta-row"><span class="pin-dist">${km < 0.03 ? "Your hotel — home base" : `${km.toFixed(2)} km from ${gEsc(anchor.name)} — ${gWalk(km)}`}</span></div>
     <p class="pin-desc">${gEsc(p.description)}</p>
     ${notes}${egg}
     <div class="pin-tags">${tags}</div>
@@ -94,7 +94,7 @@ function renderGuide(g) {
     s.pins.forEach((p) => {
       n += 1;
       pins += gPinHtml(p, n, anchor);
-      rows += `<tr><td>${n}</td><td>${gEsc(p.name)}</td><td>${gEsc(p.area.split(" · ")[0])}</td><td>${p.lat.toFixed(4)}, ${p.lng.toFixed(4)}</td><td>${gDistKm(anchor, p.lat, p.lng).toFixed(2)} km</td></tr>`;
+      rows += `<tr><td>${n}</td><td>${gEsc(p.name)}</td><td>${gEsc(p.area.split(" · ")[0])}</td><td>${p.lat.toFixed(4)}, ${p.lng.toFixed(4)}</td><td>${gDistKm(anchor, p.lat, p.lng) < 0.03 ? "Hotel" : gDistKm(anchor, p.lat, p.lng).toFixed(2) + " km"}</td></tr>`;
     });
   });
   document.getElementById("guide-pins").innerHTML = pins;

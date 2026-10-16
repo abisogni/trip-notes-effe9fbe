@@ -7,15 +7,11 @@
       "Copenhagen",
       "for Alex & Jamila"
     ],
-    "subtitle": "Twenty-three pins for a first visit: fourteen confirmed, three for Jamila, and six more within a short walk of Kongens Nytorv. Storybook streets, Andersen's Copenhagen, bakeries, a candlelit jazz cellar, and one very good pool.",
+    "subtitle": "Twenty-three pins for a first visit: fourteen confirmed, three for Jamila, and six more clustered around Kongens Nytorv. Storybook streets, Andersen's Copenhagen, bakeries, a candlelit jazz cellar, and one very good pool.",
     "hero_meta": [
       {
-        "label": "Hotel",
-        "text": "Manon les Suites"
-      },
-      {
-        "label": "Reference point",
-        "text": "Kongens Nytorv, 55.6806°N, 12.5859°E"
+        "label": "Hotel · reference point",
+        "text": "Manon les Suites, Gyldenløvesgade 19"
       },
       {
         "label": "October 17–24, 2026",
@@ -27,18 +23,18 @@
       }
     ],
     "anchor": {
-      "name": "Kongens Nytorv",
-      "lat": 55.6806,
-      "lng": 12.5859
+      "name": "Manon les Suites",
+      "lat": 55.6804,
+      "lng": 12.5612
     },
     "ref_bar": [
       {
-        "label": "Anchor",
-        "text": "Kongens Nytorv, 55.6806°N 12.5859°E"
+        "label": "Home base",
+        "text": "Manon les Suites, Gyldenløvesgade 19, 55.6804°N 12.5612°E"
       },
       {
         "label": "Walking",
-        "text": "most of Indre By is under 1.5 km from the anchor"
+        "text": "most of Indre By is under 2 km from the hotel, about 10 to 25 minutes on foot"
       },
       {
         "text": "Distances are as-the-crow-flies. Farther pins (Reffen, Islands Brygge, Nørrebro) are a bike or metro ride."
@@ -47,7 +43,7 @@
     "live_label": "Live — built together, October 17–24",
     "added_label": "Section IV — added by you",
     "skyline_alt": "Illustrated Copenhagen skyline: Nyhavn façades, Church of Our Saviour, Børsen, the Round Tower",
-    "table_footnote": "Distances are straight-line from Kongens Nytorv. Coordinates come from address lookups and are good to a few tens of metres.",
+    "table_footnote": "Distances are straight-line from Manon les Suites. Coordinates come from address lookups and are good to a few tens of metres.",
     "background_photos": [
       {
         "src": "https://res.cloudinary.com/ffi8egjg/image/upload/f_auto,q_auto,w_900/v1790060726/trips/2026-10-copenhagen/backgrounds/l1r1yykdem8i5jqwska2.jpg",
@@ -387,7 +383,7 @@
           "notes": [
             {
               "label": "Logistics",
-              "text": "Islands Brygge is ~3 km south of Kongens Nytorv across the harbor — not a drop-in on a walking day. Best combined with Reffen (same southeastern harbor arc) as a dedicated half-day."
+              "text": "Islands Brygge is about 2 km south-east of the hotel across the harbor — doable on foot, but a trip in itself. Best combined with Reffen (same southeastern harbor arc) as a dedicated half-day."
             },
             {
               "label": "Not Andersen & Maillard",
@@ -496,7 +492,7 @@
         {
           "id": "candlelight-the-lord-of-the-rings",
           "name": "Candlelight: The Lord of the Rings",
-          "area": "Indre By · Odd Fellow Palæet, Bredgade 28 · ~600 m from Kongens Nytorv",
+          "area": "Indre By · Odd Fellow Palæet, Bredgade 28",
           "lat": 55.6829,
           "lng": 12.5899,
           "color": "lavender",
@@ -525,7 +521,7 @@
         {
           "id": "jazzhus-montmartre",
           "name": "Jazzhus Montmartre",
-          "area": "Indre By · Store Regnegade 19A · ~350 m from Kongens Nytorv",
+          "area": "Indre By · Store Regnegade 19A",
           "lat": 55.6821,
           "lng": 12.5822,
           "color": "lavender",
@@ -584,12 +580,12 @@
     },
     {
       "label": "Section III — around Kongens Nytorv",
-      "title": "Gems within *a short walk*",
+      "title": "Gems *worth the walk*",
       "pins": [
         {
           "id": "charlottenborg",
           "name": "Charlottenborg (Kunsthal Charlottenborg)",
-          "area": "Kongens Nytorv 1 · ~150 m from anchor",
+          "area": "Kongens Nytorv 1",
           "lat": 55.6802,
           "lng": 12.5871,
           "color": "rose",
@@ -614,7 +610,7 @@
         {
           "id": "royal-danish-theatre-old-stage",
           "name": "Royal Danish Theatre — Old Stage",
-          "area": "Kongens Nytorv 9 · ~100 m from anchor",
+          "area": "Kongens Nytorv 9",
           "lat": 55.6796,
           "lng": 12.5861,
           "color": "rose",
@@ -637,7 +633,7 @@
         {
           "id": "nikolaj-kunsthal",
           "name": "Nikolaj Kunsthal",
-          "area": "Nikolaj Plads 10 · ~450 m from anchor",
+          "area": "Nikolaj Plads 10",
           "lat": 55.6788,
           "lng": 12.5815,
           "color": "rose",
@@ -666,7 +662,7 @@
         {
           "id": "the-marble-church",
           "name": "The Marble Church (Marmorkirken)",
-          "area": "Frederiksgade 4 · ~600 m from anchor",
+          "area": "Frederiksgade 4",
           "lat": 55.685,
           "lng": 12.5893,
           "color": "rose",
@@ -689,7 +685,7 @@
         {
           "id": "amalienborg-palace",
           "name": "Amalienborg Palace",
-          "area": "Frederiksstaden · ~700 m from anchor",
+          "area": "Frederiksstaden",
           "lat": 55.684,
           "lng": 12.5931,
           "color": "rose",
@@ -712,7 +708,7 @@
         {
           "id": "the-david-collection",
           "name": "The David Collection",
-          "area": "Kronprinsessegade 30 · ~800 m from anchor",
+          "area": "Kronprinsessegade 30",
           "lat": 55.6843,
           "lng": 12.5823,
           "color": "lavender",
